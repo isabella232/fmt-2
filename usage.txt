@@ -12,6 +12,8 @@ Usage:
 Options:
   <file>
   --dir=<path>   The directory your package.json lives in. [Default: `process.cwd()`].
+  --json         Ooutput as JSON for your machine friends [Default: `false`].
+  --dry          Resolve but don't overwrite [Default: `false`].
   --debug        Enable debug messages.
   -h --help      Show this screen.
   --version      Show version.

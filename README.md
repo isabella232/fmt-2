@@ -60,6 +60,29 @@ Use [`git ls-files`](http://git-scm.com/docs/git-ls-files) to populate `opts.fil
 
 Display diffs only and don't overwrite files.
 
+## Atom Package
+
+Just need to publish to apm? Just want one source of truth and to be able
+to delete the 100's of duplicate `.jsfmtrc` files across our projects.
+
+### [esformatter-collapse-objects](https://github.com/wbinnssmith/esformatter-collapse-objects)
+
+It's really nice, but needs a little time to tweak configs a
+bit to aggree w/ eslint rules.  This allows for:
+
+
+```javascript
+var res = {formatted: [], unchanged: []};
+```
+
+instead of always forcing:
+
+```javascript
+var res = {
+  formatted: [],
+  unchanged: []
+};
+```
 
 ## License
 

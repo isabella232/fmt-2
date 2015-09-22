@@ -3,9 +3,13 @@
 /*eslint no-sync:0*/
 var path = require('path');
 var fs = require('fs');
+var chalk = require('chalk');
+var figures = require('figures');
+var format = require('util').format;
+
 var usage = fs.readFileSync(path.resolve(__dirname, '../usage.txt')).toString();
 var args = require('minimist')(process.argv.slice(2), {
-  boolean: ['debug']
+  boolean: ['debug', 'dry', 'json']
 });
 
 if (args.debug) {
@@ -16,7 +20,8 @@ var pkg = require('../package.json');
 
 args.globs = args._;
 
-if (args.help || args.h || args.globs.length === 0) {
+
+if (args.help || args.h) {
   console.error(usage);
   process.exit(1);
 }
@@ -27,9 +32,19 @@ if (args.version) {
 
 fmt(args, function(err, res) {
   if (err) {
-    console.error(err);
+    if (args.json) {
+      err = JSON.stringify(err, null, 2);
+    }
+    console.error(chalk.red(figures.cross), err.message);
+    console.error(chalk.gray(err.stack));
     process.exit(1);
     return;
   }
-  console.log('%d files formatted', res.formatted.length);
+  if (args.json) {
+    console.log(JSON.stringify(res, null, 2));
+  } else {
+    console.log(chalk.green(figures.tick),
+      format('formatted (%d), unchanged (%d)',
+        res.formatted.length, res.unchanged.length));
+  }
 });
