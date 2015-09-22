@@ -1,0 +1,17 @@
+Usage: mongodb-js-fmt <file>... [--dir=<path/to/module/dir>]
+
+Automatically rewrites our code to a shared spec because style is for tailors.
+
+Usage:
+  # Format all javascript files in the `./lib` directory:
+  mongodb-js-fmt ./lib/{*.js,**/*.js}
+
+  # Format all javascript files in the `./lib` and `./test` directories:
+  mongodb-js-fmt ./{lib,test}/{*.js,**/*.js}
+
+Options:
+  <file>
+  --dir=<path>   The directory your package.json lives in. [Default: `process.cwd()`].
+  --debug        Enable debug messages.
+  -h --help      Show this screen.
+  --version      Show version.
