@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-/*eslint no-sync:0*/
+/* eslint no-sync:0 */
 var path = require('path');
 var fs = require('fs');
 var chalk = require('chalk');

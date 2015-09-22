@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "eslint-config-mongodb-js": "^0.1.5",
-    "mocha": "^2.3.2",
+    "mocha": "^2.3.3",
     "pre-commit": "^1.1.1"
   },
   "license": "Apache 2",
