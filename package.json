@@ -1,7 +1,7 @@
 {
   "name": "mongodb-js-fmt",
   "description": "Automatically rewrites our code to a shared spec because style is for tailors.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "check": "mongodb-js-precommit",
     "fmt": "node bin/mongodb-js-fmt.js --dry",
