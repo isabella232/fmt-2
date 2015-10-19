@@ -4,7 +4,7 @@
   "version": "0.0.3",
   "scripts": {
     "check": "mongodb-js-precommit",
-    "fmt": "node bin/mongodb-js-fmt.js --dry",
+    "fmt": "node bin/mongodb-js-fmt.js",
     "test": "mocha",
     "ci": "npm run check && npm test"
   },
