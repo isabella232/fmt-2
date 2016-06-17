@@ -11,10 +11,10 @@
   "bin": {
     "mongodb-js-fmt": "bin/mongodb-js-fmt.js"
   },
-  "homepage": "http://mongodb-js.github.io/mongodb-js-fmt",
+  "homepage": "http://mongodb-js.github.io/fmt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mongodb-js/mongodb-js-fmt.git"
+    "url": "git://github.com/mongodb-js/fmt.git"
   },
   "dependencies": {
     "async": "^1.4.2",
