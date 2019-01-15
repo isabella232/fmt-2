@@ -1,7 +1,7 @@
 {
   "name": "mongodb-js-fmt",
   "description": "Automatically rewrites our code to a shared spec because style is for tailors.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "bin": {
     "mongodb-js-fmt": "bin/mongodb-js-fmt.js"
   },
