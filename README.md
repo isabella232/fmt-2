@@ -1,3 +1,28 @@
+# :wave: Sunset
+
+If you're seeing this message, it's because your module is still using `mongodb-js-fmt` which has been sunset. This project has been hanging around for far too long... `jsfmt` has long been replaced by `prettier` and editor's are now completely different. It no longer is, it was. :)
+
+`mongodb-js-fmt` never even made it to a minor release, but it snuck into lots of project templates so I'm including this message to help cleanup.
+
+
+Here's how to make this go away:
+
+1. Remove `"fmt": "mongodb-js-fmt"` from `"scripts"` in your package.json
+2. `npm uninstall --save-dev mongodb-js-fmt`
+3. Install [prettier for the IDE/Editor of your choice](https://prettier.io/docs/en/editors.html)
+4. If you see `"mongodb-js-fmt": "0.0.3"` in a friend's `package.json`, send them a PR or this link https://github.com/mongodb-js/fmt
+
+## Why?
+
+This project has been hanging around for far too long... `jsfmt` has long been replaced by `prettier` and editor's are now completely different.
+
+Install [prettier for the IDE/Editor of your choice](https://prettier.io/docs/en/editors.html).
+
+The README below is preserved for future travelers.
+
+---
+
+
 # mongodb-js-fmt [![travis][travis_img]][travis_url] [![npm][npm_img]][npm_url]
 
 > Automatically rewrites [our code][mongodb-js] to [a shared spec][styleguide] because style is for tailors.

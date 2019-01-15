@@ -1,50 +1,17 @@
 #!/usr/bin/env node
 
-/* eslint no-sync:0 */
-var path = require('path');
-var fs = require('fs');
-var chalk = require('chalk');
-var figures = require('figures');
-var format = require('util').format;
+console.error('⚠ mongodb-js-fmt has been sunset!');
+console.error('  Please read: https://github.com/mongodb-js/fmt');
+console.error(`
+---
+If you're seeing this message, it's because your module is still using 'mongodb-js-fmt' which has been sunset. It no longer is, it was. :)
 
-var usage = fs.readFileSync(path.resolve(__dirname, '../usage.txt')).toString();
-var args = require('minimist')(process.argv.slice(2), {
-  boolean: ['debug', 'dry', 'json']
-});
+mongodb-js-fmt never even made it to a minor release, but it snuck into lots of project templates so I'm including this message to help cleanup.
 
-if (args.debug) {
-  process.env.DEBUG = 'mongodb-js-fmt';
-}
-var fmt = require('../');
-var pkg = require('../package.json');
+Here's how to make this go away:
 
-args.globs = args._;
-
-
-if (args.help || args.h) {
-  console.error(usage);
-  process.exit(1);
-}
-if (args.version) {
-  console.error(pkg.version);
-  process.exit(1);
-}
-
-fmt(args, function(err, res) {
-  if (err) {
-    if (args.json) {
-      err = JSON.stringify(err, null, 2);
-    }
-    console.error(chalk.red(figures.cross), err.message);
-    console.error(chalk.gray(err.stack));
-    process.exit(1);
-    return;
-  }
-  if (args.json) {
-    console.log(JSON.stringify(res, null, 2));
-  } else {
-    console.log(chalk.green(figures.tick),
-      format('formatted (%d), unchanged (%d)',
-        res.formatted.length, res.unchanged.length));
-  }
-});
+1. Remove \`"fmt": "mongodb-js-fmt"\` from \`"scripts"\` in your package.json
+2. npm uninstall --save-dev mongodb-js-fmt
+3. Install prettier for the IDE/Editor of your choice: https://prettier.io/docs/en/editors.html
+4. If you see \`"mongodb-js-fmt": "0.0.3"\` in a friend's \`package.json\`, send them a PR or this link https://github.com/mongodb-js/fmt
+`);
